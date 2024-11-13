@@ -1,0 +1,18 @@
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100 mt-5">
+  <h1>Leave a review for <%=@restaurant.name %></h1>
+
+
+    <div class="card my-3 d-flex justify-content-center align-items-center" style="width: 18rem;">
+      <div class="card-body">
+        <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :content%>
+        <%= f.input :rating%>
+        <div class="text-center">
+        <%= f.submit class: 'btn btn-info mt-2'%>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+ <%= link_to "Back to restaurant", restaurant_path(@restaurant), class: "btn btn-info" %>
+</div>

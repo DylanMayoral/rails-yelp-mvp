@@ -1,0 +1,19 @@
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100 mt-5">
+  <h1>Add a new Restaurant</h1>
+
+
+    <div class="card my-3 d-flex justify-content-center align-items-center" style="width: 18rem;">
+      <div class="card-body">
+        <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name%>
+        <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], prompt: "Select a category" %>
+        <%= f.input :address%>
+        <div class="text-center">
+        <%= f.submit class: 'btn btn-info mt-2'%>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+ <%= link_to "View all restaurants", restaurants_path, class: "btn btn-info" %>
+</div>

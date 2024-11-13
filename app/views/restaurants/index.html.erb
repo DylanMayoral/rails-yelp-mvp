@@ -1,0 +1,14 @@
+<div class="container d-flex flex-column justify-content-center align-items-center my-5">
+  <h1>Restaurants</h1>
+
+  <% @restaurants.each do |restaurant| %>
+    <div class="card my-3 d-flex justify-content-center align-items-center" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= restaurant.name %></h5>
+        <p class="card-text"><%= restaurant.address %></p>
+        <%= link_to "View Restaurant", restaurant_path(restaurant), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  <%= link_to "Add Restaurant", new_restaurant_path, class: "btn btn-info" %>
+</div>
